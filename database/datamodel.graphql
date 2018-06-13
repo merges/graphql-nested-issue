@@ -1,0 +1,20 @@
+type Manufacturer {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Car @model {
+  manufacturer: Manufacturer @relation(name: "CarManufacturer")
+  createdAt: DateTime!
+  id: ID! @unique
+  status: String
+  updatedAt: DateTime!
+  user: User @relation(name: "CarUser")
+}
+
+type User @model {
+  createdAt: DateTime!
+  id: ID! @unique
+  updatedAt: DateTime!
+}

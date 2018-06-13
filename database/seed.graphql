@@ -1,0 +1,13 @@
+mutation {
+  first: createManufacturer(data: {
+    foo: "bar"
+  }) {
+    id
+  }
+  
+  first: createUser(data: {
+    foo: "bar"
+  }) {
+    id
+  }
+}

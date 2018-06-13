@@ -1,0 +1,24 @@
+# import Car from "./generated/prisma.graphql"
+# import Manufacturer from "./generated/prisma.graphql"
+# import User from "./generated/prisma.graphql"
+
+type Query {
+  car(carId: ID!): Car
+  carByManufacturer(manufacturerId: ID!): Car
+  cars: [Car]
+  carsForUser(userId: ID!): [Car]
+  manufacturer(manufacturerId: ID!): Manufacturer
+  manufacturers: [Manufacturer]
+  user(userId: ID!): User
+  users: [User]
+}
+
+type Mutation {
+  createCar(
+    manufacturerId: ID!,
+    status: String!,
+    userId: ID!,
+  ): Car
+  createManufacturer(foo: String): Manufacturer
+  createUser(foo: String): User
+}
